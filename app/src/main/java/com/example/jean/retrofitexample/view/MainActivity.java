@@ -5,12 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.jean.retrofitexample.R;
-import com.example.jean.retrofitexample.model.Country;
-import com.example.jean.retrofitexample.presenter.CountryPresenter;
+import com.example.jean.retrofitexample.model.History;
+import com.example.jean.retrofitexample.player.Player;
+import com.example.jean.retrofitexample.presenter.FootballPresenter;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements CountryView {
+public class MainActivity extends AppCompatActivity implements FootballView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,20 +19,30 @@ public class MainActivity extends AppCompatActivity implements CountryView {
         setContentView(R.layout.activity_main);
 
 
-        CountryPresenter countryPresenter = new CountryPresenter(this);
+        FootballPresenter footballPresenter = new FootballPresenter(this);
 
         // Maybe it's best to call it on onResume()
-        countryPresenter.getCountries();
+        footballPresenter.getPlayerPresenter();
+        footballPresenter.getHistory();
     }
 
     @Override
-    public void countriesReady(List<Country> countries) {
+    public void playerFootball(List<Player> players) {
 
         // See your Logcat :)
-        for (Country country : countries) {
-            Log.i("RETROFIT", country.getName() + "\n"
-                    + " - Alpha2:  " + country.getAlphaCode2() + " \n"
-                    + " - Alpha3: " + country.getAlphaCode3());
+        for (Player player : players) {
+            Log.i("RETROFIT", player.getNama() + "\n"
+                    + " - Alpha2:  " + player.getNegara() + " \n"
+                    + " - Alpha3: " + player.getTeam());
         }
     }
+
+    public void historyReady(List<History> histories) {
+        for (History history : histories) {
+            Log.d("RETROFIT", "historyReady: " + "\n"
+                    + "NAMA :" + history.getNama() + "\n"
+                    + "Deskripsi :" + history.getDeskripsi());
+        }
+    }
+
 }
