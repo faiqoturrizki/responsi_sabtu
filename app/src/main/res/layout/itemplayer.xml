@@ -5,16 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="15dp"
     android:layout_margin="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imgPlayer"
+        android:layout_margin="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
     <LinearLayout
+        android:layout_toRightOf="@id/imgPlayer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/imgPlayer"
-            android:layout_margin="10dp"
-            android:layout_gravity="center_vertical"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/tvPlayer"
             android:layout_width="wrap_content"
@@ -22,17 +26,16 @@
             android:text="MESSI"
             android:layout_margin="10dp"
             android:textSize="20sp"
-            android:layout_gravity="center_vertical"
             />
         <TextView
             android:id="@+id/tvusia"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MESSI"
             android:layout_margin="10dp"
             android:textSize="20sp"
-            android:layout_gravity="center_vertical"
             />
 
     </LinearLayout>
+    </RelativeLayout>
 </android.support.v7.widget.CardView>

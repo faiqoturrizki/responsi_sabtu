@@ -1,18 +1,17 @@
-package com.example.jean.retrofitexample.view;
+package com.example.jean.retrofitexample.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.AbsListView;
-import android.widget.LinearLayout;
 
 import com.example.jean.retrofitexample.R;
 import com.example.jean.retrofitexample.adapter.MainAdapter;
 import com.example.jean.retrofitexample.model.History;
 import com.example.jean.retrofitexample.player.Player;
 import com.example.jean.retrofitexample.presenter.FootballPresenter;
+import com.example.jean.retrofitexample.view.FootballView;
 
 import java.util.ArrayList;
 import java.util.List;

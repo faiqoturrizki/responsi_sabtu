@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/biru"
-    tools:context="com.example.jean.retrofitexample.view.MainActivity">
+    tools:context="com.example.jean.retrofitexample.activity.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvPemain"

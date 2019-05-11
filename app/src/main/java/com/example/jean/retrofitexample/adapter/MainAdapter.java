@@ -11,8 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jean.retrofitexample.R;
+import com.example.jean.retrofitexample.activity.DetailActivity;
 import com.example.jean.retrofitexample.model.History;
-import com.example.jean.retrofitexample.view.MainActivity;
+import com.example.jean.retrofitexample.activity.MainActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -43,6 +44,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         holder.usia.setText("Usia :"+String.valueOf(historyList.get(position).getAge()));
 
         Picasso.with(context).load(historyList.get(position).getGambar()).into(holder.playerImage);
+        holder.playerImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("posisi",position);
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
